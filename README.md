@@ -6,9 +6,8 @@ Convert iTunes XML library to an M3U playlist
 First, export your itunes library:
 
 Go to iTunes, then menu option: File > Library > Export Library
-Select the option to "Export as XML".
 
-and then run this app like this:
+Select the option to "Export as XML", and then run this app like this:
 
     node convert.js library.xml > library.m3u
 
