@@ -1,0 +1,27 @@
+{
+  "name": "itunesXMLtoM3U",
+  "version": "1.0.0",
+  "description": "Convert itunes xml libraries to M3U",
+  "main": "convert.js",
+  "dependencies": {
+    "plist": "^1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/danielsmith-eu/itunesXMLtoM3U.git"
+  },
+  "keywords": [
+    "itunes",
+    "m3u"
+  ],
+  "author": "Daniel Alexander Smith <daniel@danielsmith.eu> (https://danielsmith.eu/)",
+  "license": "BSD2",
+  "bugs": {
+    "url": "https://github.com/danielsmith-eu/itunesXMLtoM3U/issues"
+  },
+  "homepage": "https://github.com/danielsmith-eu/itunesXMLtoM3U"
+}
