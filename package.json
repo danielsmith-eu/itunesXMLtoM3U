@@ -16,9 +16,17 @@
   },
   "keywords": [
     "itunes",
-    "m3u"
+    "m3u",
+    "verify",
+    "scan",
+    "file",
+    "corrupt",
+    "broken"
   ],
   "author": "Daniel Alexander Smith <daniel@danielsmith.eu> (https://danielsmith.eu/)",
+  "contributors": [
+    "Michael Hammes <gitresmh@icloud.com>"
+  ],
   "license": "BSD2",
   "bugs": {
     "url": "https://github.com/danielsmith-eu/itunesXMLtoM3U/issues"
