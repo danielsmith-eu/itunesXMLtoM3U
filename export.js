@@ -36,8 +36,8 @@ for (var plId in itunes.Playlists) {
 		var curpl = [];
 
 		// Iterate over all playlist items if present
-		console.log('Exporting ' + pl.Name + ' (' + plfile + ')');
 		if (pl['Playlist Items'] && pl['Playlist Items'].length) {
+			console.log('Exporting ' + pl.Name + ' with ' + pl['Playlist Items'].length + ' items (' + plfile + ')');
 			for (var i = 0; i < pl['Playlist Items'].length; i++) {
 
 				// Determine playlist item track id
@@ -52,7 +52,8 @@ for (var plId in itunes.Playlists) {
 
 			// Flush playlist array as simple m3u
 			fs.writeFileSync(path.join(basepath, plfile), curpl.join('\n') + '\n', { flag: 'w+' });
-			
+		} else {
+			console.log('Skipping playlist ' + pl.Name + ' as it is empty');
 		}
 	} catch (e) {
 		console.log('Failed to export playlist (' + e + ')');
