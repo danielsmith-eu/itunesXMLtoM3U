@@ -1,23 +1,36 @@
 # itunesXMLtoM3U
-Convert iTunes XML library to an M3U playlist
+Scan iTunes XML libraries for file presence and integrity and export them to M3U playlists.
 
 ## Usage
 
-First, export your itunes library:
+Verify that your itunes library xml file is up to date, which is commonly ensured by itunes.
 
-Go to iTunes, then menu option: File > Library > Export Library
+If not, export it manually within itunes by calling the menu option File > Library > Export Library and selecting to "Export as XML" within the save file dialog.
 
-Select the option to "Export as XML", and then run this app like this:
 
-    node convert.js library.xml > library.m3u
+To dump all library items as m3u with basic extended information, run:
+
+    node convert.js /path/to/library.xml > library.m3u
 
 You will then have an M3U file of your library called library.m3u.
 
-The actual filenames are not used, instead they are anonymised into faux filenames using the album name etc.
+To scan all library items and verify them by means of ffmpeg, run:
 
-## Why import iTunes Libraries?
+	node scan.js (presence) (again) (continue) /path/to/library.xml
 
-You might want to move from Apple Music to Spotify or another platform.
+    presence: Only check whether files exist
+    continue: Continue interrupted scan
+    again: Re-Scan files previously marked as broken
+
+Following files are stored to the library's folder:
+
+    _all.m3u: Contains all scanned files
+    _failed.m3u / _failedagain.m3u: Contain files determined to be broken (again)
+
+To export all of the library's playlists (including master playlists by media type) as simple m3u files to the library's folder, run:
+
+    node export.js /path/to/library.xml
+
 
 ## Why M3U?
 
@@ -36,5 +49,3 @@ Soundiiz is available here: <https://soundiiz.com/converter>
 ## Why not just use [my favourite tool] ?
 
 I didn't find it in the 10 minutes I googled for a tool, and it didn't take me long to write this.
-
-
